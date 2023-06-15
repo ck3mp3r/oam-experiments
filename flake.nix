@@ -9,10 +9,10 @@
       devShell =
         let
           # Define the URL, version and sha256 hash
-          vela-version = "v1.8.2";
+          vela-version = "v1.9.0";
           vela-sha256 = {
             # aarch64-linux = "<your-specific-hash-for-linux>";
-            aarch64-darwin = "Fep0SPsXjPIYAubG6/eShIuVGkuLhjNz/EnQ/bvxSUU=";
+            aarch64-darwin = "Rn19RLgv7ng8LyR+q862gH2yCeEu/StkG8CX9Kx/s/M=";
           };
 
           pkgs = import nixpkgs {
