@@ -1,0 +1,7 @@
+packages = [
+  "kubernetes-helm"
+]
+
+
+[[commands]]
+package = "vela"

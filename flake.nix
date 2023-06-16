@@ -15,21 +15,22 @@
             aarch64-darwin = "Rn19RLgv7ng8LyR+q862gH2yCeEu/StkG8CX9Kx/s/M=";
           };
 
+          vela_overlay = self: super: {
+            vela = import ./nix/vela.nix {
+              inherit system pkgs;
+              version = vela-version;
+              sha256s = vela-sha256;
+            };
+          };
+
           pkgs = import nixpkgs {
             inherit system;
 
-            overlays = [ devshell.overlays.default ];
-          };
-
-          vela = import ./nix/vela.nix {
-            inherit system pkgs;
-            version = vela-version;
-            sha256s = vela-sha256;
+            overlays = [ devshell.overlays.default vela_overlay ];
           };
 
         in
         pkgs.devshell.mkShell {
-          packages = with pkgs; [ vela kubernetes-helm ];
           imports = [ (pkgs.devshell.importTOML ./devshell.toml) ];
         };
     });

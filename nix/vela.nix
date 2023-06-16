@@ -12,7 +12,7 @@ let
   };
   velaSystem = systemMap.${system};
 
-  pname = "kubevela-cli";
+  pname = "vela";
   tarballName = "vela-${version}-${velaSystem}.tar.gz";
   fullUrl = "${url}/releases/download/${version}/${tarballName}";
   sha256 = sha256s.${system};
